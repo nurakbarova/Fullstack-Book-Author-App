@@ -1,0 +1,9 @@
+.author_img{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.HomePages{
+    background-color: wheat;
+}
