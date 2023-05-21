@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import Navbar from './components/Navbar';
-// import HomePages from './pages/HomePages';
-import Authors from './pages/Authors';
+import App from './App';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <>
-
-<Authors/>
+<App/>
 </>
 );
 

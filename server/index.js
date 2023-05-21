@@ -21,11 +21,13 @@ const AuthorSchema = new Schema({
 //model
 const AuthorModel = mongoose.model("authors", AuthorSchema)
 
-// //MONGO DATABASE CONNECTION
-// mongoose.connect(
-//     process.env.DB_CONNECTION.replace("<password>",process.env.DB_PASSWORD)
-//     )
-//     .then(()=>console.log("mongo connect"))
+//MONGO DATABASE CONNECTION
+DB_CONNECTION=process.env.DB_CONNECTION
+DB_PASSWORD=process.env.DB_PASSWORD
+mongoose.connect(
+    DB_CONNECTION.replace("<password>",DB_PASSWORD)
+    )
+    .then(()=>console.log("mongo connect"))
 
 app.get("/api", (req, res) => {
     res.send("Welcome APi");
