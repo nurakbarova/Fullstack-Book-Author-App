@@ -53,6 +53,22 @@ app.post("/api", async (req, res) => {
     res.status(201).send("created");
   });
 
+//Delete security
+ async (req, res) => {
+  const id = req.params.id;
+  const author = await AuthorModel.findByIdAndDelete(id);
+  await AuthorModel.deleteMany({ authorID: id });
+  if (author === undefined) {
+    res.status(404).send("author not found");
+  } else {
+    res.status(203).send({
+      data: author,
+      message: "author deleted successfully",
+    });
+  }
+},
+
+
 PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`NODE APP listening on port ${PORT}`);
